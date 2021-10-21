@@ -1,0 +1,30 @@
+<p>addresource works!</p>
+<div class="example-container">
+  <h2>Resource Catalog</h2>
+
+  <div
+    cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListData]="resourceCatalog"
+    
+    [cdkDropListConnectedTo]="[doneList]"
+    class="example-list">
+
+    <div class="example-box" *ngFor="let item of resourceCatalog" cdkDrag>{{item}}</div>
+  </div>
+</div>
+
+<div class="example-container">
+  <h2>Project</h2>
+
+  <div
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="project"
+    
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of project" cdkDrag>{{item}}</div>
+  </div>
+</div>
+

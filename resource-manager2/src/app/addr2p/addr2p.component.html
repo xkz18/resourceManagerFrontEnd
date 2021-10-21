@@ -1,0 +1,16 @@
+
+<button (click)="assigne()">Add</button>
+<h2>Resource Catalog</h2>
+<select  class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2" (ngModelChange)="chosenCars($event)">
+  <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
+</select>
+
+<h2>Project</h2>
+<select  class="form-control" [ngModel]="selectedToRemove" multiple name="myselecttsms" (ngModelChange)="chosenCarsToRemove($event)">
+  <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}</option>
+</select>
+
+
+
+
+<!-- <button (click)="unassigne()">Unassigne</button> -->
